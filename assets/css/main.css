@@ -1592,3 +1592,26 @@
 		body.is-loading #footer {
 			opacity: 0;
 		}
+
+
+
+/*
+========================================
+
+Custom Styles
+
+========================================
+*/
+
+.social-icon {
+	color: #fff;
+	background: transparent;
+	border: 1px solid #fff;
+	padding: 1em;
+	border-radius: 50%;
+}
+
+.social-icon a {
+	text-decoration: none;
+	border: none !important;
+}
