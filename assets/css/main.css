@@ -1607,11 +1607,11 @@ Custom Styles
 	color: #fff;
 	background: transparent;
 	border: 1px solid #fff;
-	padding: 1em;
+	padding: 1rem;
 	border-radius: 50%;
 }
 
-.social-icon a {
+#instagram {
 	text-decoration: none;
-	border: none !important;
+	border: 1px solid #fff;
 }
