@@ -1,24 +1,28 @@
 <?php
-if (isset($_POST['rows'])) {
+if($_POST['formSubmit'] == "Submit")
+{
+	$errorMessage = "";
 	
-	$h = tmpfile();
-	foreach ($_POST['rows'] as $row) {
-	    fputcsv($h, array_values($row));
+	if(empty($_POST['formMovie']))
+	{
+		$errorMessage .= "<li>You forgot to enter a movie!</li>";
 	}
-	rewind($h);
-	$csv = '';
-	while (($row = fgets($h)) !== false) {
-            $csv .= $row;
-        }
-	fclose($h);
+	if(empty($_POST['formName']))
+	{
+		$errorMessage .= "<li>You forgot to enter a name!</li>";
+	}
 	
-	header("Content-type: application/csv");
-	header("Content-Disposition: attachment; filename=file.csv");
-	header("Pragma: no-cache");
-	header("Expires: 0");
-	
-	echo $csv;
-	exit;
-	
+	$varMovie = $_POST['formMovie'];
+	$varName = $_POST['formName'];
+
+	if(empty($errorMessage)) 
+	{
+		$fs = fopen("mydata.csv","a");
+		fwrite($fs,$varName . ", " . $varMovie . "\n");
+		fclose($fs);
+		
+		header("Location: thankyou.html");
+		exit;
+	}
 }
 ?>

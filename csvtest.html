@@ -1,11 +1,26 @@
 <html>
-<body>
-
-<form action="welcome_get.php" method="get">
-Name: <input type="text" name="name"><br>
-E-mail: <input type="text" name="email"><br>
-<input type="submit">
-</form>
-
-</body>
-</html>
+    <head>
+      <title>My Form</title>
+    </head>
+    
+    <body>
+      <?php
+        if(!empty($errorMessage)) 
+        {
+          echo("<p>There was an error with your form:</p>\n");
+          echo("<ul>" . $errorMessage . "</ul>\n");
+        } 
+      ?>
+      <form action="myform1.php" method="post">
+        <p>
+          What is your favorite movie?<br>
+          <input type="text" name="formMovie" maxlength="50" value="<?=$varMovie;?>" />
+        </p>
+        <p>
+          What is your name?<br>
+          <input type="text" name="formName" maxlength="50" value="<?=$varName;?>" />
+        </p>				
+        <input type="submit" name="formSubmit" value="Submit" />
+      </form>
+    </body>
+    </html>
