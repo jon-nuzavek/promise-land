@@ -384,30 +384,34 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
       <script src="assets/js/main.js"></script>
       <script src="https://code.jquery.com/jquery-2.1.4.js"></script>      
-      <script src="assets/js/jquery.countdown.js"></script>      
+      <script src="assets/js/jquery.countdown.js"></script>
+      <script src="http://momentjs.com/downloads/moment.js"></script>
+      
       
       <script src="https://www.youtube.com/iframe_api"></script>
       <script type="text/javascript">
+      var launchTime = moment.tz("2017-10-10 10:00", "America/Los_Angeles");
+
           $("#DAYS")
-          .countdown("2017/10/10", function(event) {
+          .countdown(launchTime.toDate(), function(event) {
             $(this).text(
               event.strftime('%D')
             );
           });
           $("#HOURS")
-          .countdown("2017/10/10", function(event) {
+          .countdown(launchTime.toDate(), function(event) {
             $(this).text(
               event.strftime('%H')
             );
           });
           $("#MINUTES")
-          .countdown("2017/10/10", function(event) {
+          .countdown(launchTime.toDate(), function(event) {
             $(this).text(
               event.strftime('%M')
             );
           });
           $("#SECONDS")
-          .countdown("2017/10/10", function(event) {
+          .countdown(launchTime.toDate(), function(event) {
             $(this).text(
               event.strftime('%S')
             );
