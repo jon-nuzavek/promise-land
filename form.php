@@ -7,7 +7,7 @@ if($_POST['formSubmit'] == "Submit")
   $varLast= $_POST['LNAME'];
   
 
-		$fs = fopen("mydata.csv","a");
+		$fs = fopen("data.txt","a");
 		fwrite($fs,$varEmail . ", " . $varFirst . ", " . $varLast . "\n");
 		fclose($fs);
 		
